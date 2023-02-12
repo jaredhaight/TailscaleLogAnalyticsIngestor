@@ -1,6 +1,8 @@
 # Tailscale LogAnalytics Ingestor
-This is a small service that's forwards Tailscale audit events to Log Analytics. 
+This is a small service that's forwards Tailscale audit events to Log Analytics.
 
+# Running
+By default the docker container listens on 8080. 
 
 # Configuration
 You can set the following configuration values either in appsettings.json or via environment variables.
