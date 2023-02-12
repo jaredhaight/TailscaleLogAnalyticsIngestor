@@ -9,7 +9,9 @@ By default the docker container listens on 8080. You can change that by followin
 Events will be in Log Analytics under the table name "TailscaleEvents_CL". You can change this by adjusting the log analytics table name setting detailed below. Log analytics will automatically add "_CL" to the end of this string.
 
 # Configuration
-You can set the following configuration values either in appsettings.json or via environment variables. It is recommended that you store these values in a secure manner, especially the Workspace and Webhook keys.
+You can set the following configuration values either in appsettings.json or via environment variables. Note that environment variables take precedence over the JSON configuration.
+
+It is recommended that you store these values in a secure manner, especially the Workspace and Webhook keys.
 
 | Setting | Default | JSON Path | Environment variable Name |
 |---------|---------|-----------|---------------------------|
