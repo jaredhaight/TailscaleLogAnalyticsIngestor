@@ -26,16 +26,15 @@ public class LogAnalyticsClient
         _workspaceKey = configuration.GetValue<string>("LogAnalyticsClient:WorkspaceKey")!;
         _resource = "/api/logs";
         string apiHost = configuration.GetValue<string>("LogAnalyticsClient:ApiHost")!;
-        string? url = $"https://{_workspaceId}.{apiHost}{_resource}?api-version=2016-04-01";
-        _httpClient.BaseAddress = new Uri(url!);
+        string url = $"https://{_workspaceId}.{apiHost}{_resource}?api-version=2016-04-01";
+        _httpClient.BaseAddress = new Uri(url);
     }
 
     private string BuildSignature(string message)
     {
-        var encoding = new System.Text.ASCIIEncoding();
         byte[] keyByte = Convert.FromBase64String(_workspaceKey);
-        byte[] messageBytes = encoding.GetBytes(message);
-        using var hmacsha256 = new HMACSHA256(keyByte);
+        byte[] messageBytes = Encoding.ASCII.GetBytes(message);
+        using HMACSHA256 hmacsha256 = new(keyByte);
         byte[] hash = hmacsha256.ComputeHash(messageBytes);
         return Convert.ToBase64String(hash);
     }

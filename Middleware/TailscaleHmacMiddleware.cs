@@ -38,7 +38,7 @@ public class TailscaleHmacMiddleware {
         _logger.LogInformation("Got secret with length {length}", secret.Length);
 
         // split up tailscale header
-        var values = extractedApiKey.ToString().Split(',');
+        string[] values = extractedApiKey.ToString().Split(',');
 
         // process timestamp
         long timestamp = long.Parse(values[0].Split('=')[1]);
