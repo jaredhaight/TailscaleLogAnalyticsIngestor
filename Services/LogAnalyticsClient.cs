@@ -1,3 +1,5 @@
+// Modified from here: https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collector-api?tabs=c-sharp
+
 using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
