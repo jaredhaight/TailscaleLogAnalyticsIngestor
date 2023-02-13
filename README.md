@@ -4,7 +4,7 @@ This is a small service that's forwards Tailscale audit events to Log Analytics.
 # Running
 You can either build the docker image yourself by cloning the repo or you can pull the latest image from github using [these instructions](https://github.com/jaredhaight/TailscaleLogAnalyticsIngestor/pkgs/container/tailscaleloganalyticsingestor)
 
-By default the docker container listens on 8080. You can change that by following the [instructructions here](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-3.1#endpoint-configuration).
+By default the docker container listens on 8080. You can change that by adjusting the ASPNET_ENDPOINTS environment variable or "Urls" key in appsettings.json. Details for doing that are [available here](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel/endpoints?view=aspnetcore-7.0).
 
 Events will be in Log Analytics under the table name "TailscaleEvents_CL". You can change this by adjusting the log analytics table name setting detailed below. Log analytics will automatically add "_CL" to the end of this string.
 
